@@ -1,0 +1,47 @@
+{
+  "name": "@plasmadex/plasmaswap-periphery",
+  "version": "0.0.1",
+  "description": "Peripheral smart-contracts for PlasmaSwap",
+  "engines": {
+    "node": ">=10"
+  },
+  "homepage": "https://plasma.finance",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plasmadlt/plasmadex/plasmaswap-periphery"
+  },
+  "files": [
+    "build",
+    "contracts"
+  ],
+  "devDependencies": {
+    "@types/chai": "^4.2.6",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "^2.4.1",
+    "ethereumjs-util": "^6.2.0",
+    "mocha": "^6.2.2",
+    "ncp": "^2.0.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "solc": "0.6.6",
+    "truffle-plugin-verify": "^0.5.4",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  },
+  "scripts": {
+    "lint": "yarn prettier ./test/*.ts --check",
+    "lint:fix": "yarn prettier ./test/*.ts --write",
+    "clean": "rimraf ./build/",
+    "precompile": "yarn clean",
+    "compile": "waffle .waffle.json",
+    "pretest": "yarn compile",
+    "test": "mocha",
+    "prepublishOnly": "yarn test"
+  },
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.2.1",
+    "dotenv": "^8.2.0"
+  }
+}
